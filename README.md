@@ -1,5 +1,7 @@
 # assignment1-alonalas
 assignment1-alonalas created by GitHub Classroom
+Username: alonalas
+id: 205567944
 
 This website was created for the Beatles singer and song writer Paul McCartney.
 The website contains details about mcCartney's life and career.
