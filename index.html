@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="slideShow.css" />
     <link rel="stylesheet" type="text/css" href="contact.css" />
-
+    <link rel="stylesheet" type="text/css" href="emoji.css" />
 
   </head>
 
@@ -205,7 +205,7 @@
         <br/>
       </div>
 
-      <div class="contact" class="section">
+      <div id="contact" class="section">
         <form action="mailto:alonalas@post.bgu.ac.il"method="post" enctype="text/plain" >
           <br>
           <br>
@@ -218,96 +218,109 @@
           <div class="row input-container">
               <div class="col-xs-12">
                 <div class="styled-input wide">
-                  <input type="text" required />
+                  <input type="text" id="name_field"required />
                   <label>Name</label> 
                 </div>
               </div>
               <div class="col-md-6 col-sm-12">
                 <div class="styled-input">
-                  <input type="text" required />
+                  <input type="text" name="email_field" required />
                   <label>Email</label> 
                 </div>
               </div>
               <div class="col-md-6 col-sm-12">
                 <div class="styled-input" style="float:right;">
-                  <input type="text" required />
+                  <input type="text" name="phone_field" required />
                   <label>Phone Number</label> 
                 </div>
               </div>
               <div class="col-xs-12">
                 <div class="styled-input wide">
-                  <textarea required></textarea>
+                  <textarea required id="theMessage"></textarea>
                   <label>Message</label>
                 </div>
               </div>
-              <input type="submit" class="btn-lrg submit-btn" value="Send message">
               <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-
+              <section class="container">
+                <div class="dropdown dropdown-dark">
+                  <select name="droplist" onchange="insertEmojiToMessage()" placeholder="emoji" class="dropdown-select" id="emojis">
+                    <option value="">Choose Emoji :)</option>
+                    <option value="&#128519">&#128519</option>
+                    <option value="&#128151">&#128151</option>
+                    <option value="&#128557">&#128557</option>
+                  </select>
+                </div>
+              </section>
           </div>
-        </form> 
+          <input type="submit" class="btn-lrg submit-btn" value="Send message">
+        </form>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
       </div>
-      
-      
+    
     </div>
         
-<script>
-  
-</script>
-<!--functions for photos-->
-<script>
-  var slideIndex = 1;
-  showSlides(slideIndex);
+    <!--functions for photos-->
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
 
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
 
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
 
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-  }
-</script>
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }
+    </script>
 
-<!--was given by default-->
-<script type="text/javascript">
-  $(function()){
-    $("#nav a").click(function(e){
-      e.preventDefault();
-      $('html,body').scrollTo(this.hash,this.hash); 
-    });
-  });
-</script>
+    <!--was given by default-->
+    <script type="text/javascript">
+      $(function(){
+        $("#nav a").click(function(e){
+          e.preventDefault();
+          $('html,body').scrollTo(this.hash,this.hash); 
+        });
+      });
+    </script>
 
-<script type="text/javascript">
-  $(document).scroll(function() {
-    $('#menu').toggle($(this).scrollTop()>1000)
-  });​
-</script>
+    <script type="text/javascript">
+      $(document).scroll(function() {
+        $('#menu').toggle($(this).scrollTop()>1000)
+      });​
+    </script>
 
-  </body>
+    <!-- inserting emojis-->
+    <script>
+      function insertEmojiToMessage() {
+        document.getElementById("theMessage").value = document.getElementById("theMessage").value + document.getElementById("emojis").value
+        document.getElementById("emoji").value = ''
+      }
+    </script>
+
+
+</body>
 </html>

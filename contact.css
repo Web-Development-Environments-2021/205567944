@@ -68,6 +68,7 @@ textarea {
     background-color: #2d2d2d;
     color: white;
     border-radius: 4px;
+	
 }
 
 input:focus,
@@ -78,17 +79,20 @@ textarea:focus ~ span {
     width: 100%;
     -webkit-transition: all 0.075s ease;
     transition: all 0.075s ease;
+	
 }
 
 textarea {
     width: 100%;
     min-height: 15em;
+	
 }
 
 .input-container {
     width: 650px;
     max-width: 100%;
     margin: 20px auto 25px auto;
+	
 }
 
 .submit-btn {
@@ -129,3 +133,4 @@ input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
 }
+
