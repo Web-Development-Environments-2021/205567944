@@ -9,4 +9,4 @@ You can also watch photos of mcCartney, listen to his favorite songs and give a 
 
 If you have any problems or improvment advices, you can always contact us in the dedicated section at bottom of the page.
 
-Paul McCartney's site URL: https://web-development-environments-2021.github.io/assignment1-alonalas/
+Paul McCartney's site URL: https://web-development-environments-2021.github.io/205567944/
